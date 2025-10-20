@@ -139,6 +139,7 @@ function Board() {
         const win_con5 = val3 === val5 && val5 === val7;
         const win_con6 = val7 === val8 && val8 === val9;
         const win_con7 = val2 === val5 && val5 === val8;
+        const win_con8 = val3 === val4 && val4 === val5;
 
         if (
             (win_con1 && val1 != "") ||
@@ -164,6 +165,12 @@ function Board() {
             }
         } else if (win_con7 && val2 != "") {
             if (val2 === "X") {
+                setWon("X");
+            } else {
+                setWon("O");
+            }
+        } else if (win_con8 && val3 != "") {
+            if (val3 === "X") {
                 setWon("X");
             } else {
                 setWon("O");
